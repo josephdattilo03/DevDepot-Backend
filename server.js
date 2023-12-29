@@ -2,10 +2,14 @@ const express = require('express');
 const app = express();
 const db = require("./connect");
 const port = 3000;
+const userService = require('./routes/crud.service')
+app.use(express.json())
 
 app.get('/', (req, res) => {
     res.send('Hello, World!');
 });
+
+app.post('/create', userService.create)
 
 
 
