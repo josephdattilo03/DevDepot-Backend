@@ -10,17 +10,21 @@ const userSchema = new mongoose.Schema({
         required: true
     },
     password: {
-        type: String,
-        required: true,
+        type: String
     },
     email: {
         type: String,
-        required: true
+        required: true,
+        unique: true
     },
     school: {
         type: String
     },
     validated: {
+        type: Boolean,
+        default: false
+    },
+    google: {
         type: Boolean,
         default: false
     },

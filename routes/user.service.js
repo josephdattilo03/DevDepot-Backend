@@ -5,7 +5,7 @@ async function createUser(req, res) {
     try {
         const userData = req.body;
         let newUser = new User(userData);
-
+        //TODO school derivation
         const hashedPassword = await bcrypt.hash(newUser.password, 10);
         newUser.password = hashedPassword
         const savedUser = await newUser.save()
