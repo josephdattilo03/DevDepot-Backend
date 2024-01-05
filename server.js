@@ -27,7 +27,11 @@ app.get('/', (req, res) => {
     }
 });
 
-app.post('/user/create', userService.createUser);
+app.get('/user/get', userService.getUserInformation)
+app.post('/user/create', userService.createUser)
+app.patch('/user/update', userService.updateUser)
+app.delete('/user/delete', userService.deleteUser)
+
 
 app.get('/auth/google', passport.authenticate('google', { scope: ['email', 'profile'] }))
 
